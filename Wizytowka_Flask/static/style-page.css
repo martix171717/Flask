@@ -1,0 +1,18 @@
+p {
+    background-color: grey;
+    font-size:30px;
+}
+
+div#content h1 {
+    color: darkblue;
+}
+div#content p {
+    font-size: 17px;
+    background-color: transparent;
+}
+div#content li {
+    font-size: 17px;
+}
+div#content label {
+    font-size: 19px;
+}
