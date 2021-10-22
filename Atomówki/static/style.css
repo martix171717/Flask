@@ -1,0 +1,100 @@
+
+.center{
+  text-align: center;
+  font-family:Helvetica;
+  color: darkblue;
+}
+
+.image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border-radius: 4%;
+  box-shadow: 0 0 1.5em black;
+}
+
+.image1{
+  width: 190px;
+  height: 230px;
+}
+
+.name {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 20px;
+  width: 10%;
+  text-align: center;
+  box-shadow: 0 0 0.5em black;
+  border-radius: 3%;
+}
+.bubbles {
+  color: blue;
+  background-color: lightblue;
+}
+
+.blossom {
+  color: red;
+  background-color: pink;
+}
+
+
+.buttercup {
+  color: green;
+  background-color: lightgreen;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 30px 45px;
+  display: block-inline;
+  align-items: center;
+  font-size: 25px;
+  box-shadow: 0 0 0.5em black;
+  border-radius: 3%;
+}
+
+.button1 {
+background-color: #008CBA;
+} /* Blue */
+
+.button1:hover {
+color: blue;
+}
+
+.button2 {
+background-color: #F08080;
+} /* Pink */
+
+.button2:hover {
+color: pink;
+}
+
+.button3 {
+background-color: #4CAF50;
+} /* Green */
+
+.button3:hover {
+color: green;
+}
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+	  background-position: 0% 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	  background-position: 0% 50%;
+	}
+}

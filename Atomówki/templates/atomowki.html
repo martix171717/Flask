@@ -1,0 +1,23 @@
+<html>
+    <head>
+    {% block head %}
+       <title> 
+             {% block title %} Atomówki {% endblock %}
+       </title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    {% endblock %} 
+    </head>
+    <body>
+       <div class="center"><br> 
+        <h1 class="center"> ATOMÓWKI </h1><br>
+          <a href="/bajka" class="button button1">Bajka</a>
+          <a href="/bojka" class="button button2">Bójka</a>
+          <a href="/brawurka" class="button button3">Brawurka</a><br><br>
+          <img class="image" src="{{url_for('static', filename ='atomowki.jpg')}}" alt="atomowki"/>
+        </div>
+        <div id="content">
+        {%block content%}
+        {% endblock %}
+        </div>
+    </body>
+</html>
