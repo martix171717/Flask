@@ -1,7 +1,6 @@
 import requests
-import json
+import datetime
 import csv
-import pickle
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
@@ -25,8 +24,9 @@ def rates_to_csv():
         writer.writerows(rates)
 
 rates_to_csv()
-@app.route('/form', methods=["GET", "POST"])
-def form():
+@app.route('/exchange', methods=["GET", "POST"])
+def exchage():
+    today = datetime.date.today()
     codes = get_codes()
     if request.method == "POST":
         data = request.form
@@ -38,5 +38,5 @@ def form():
                 break
         cost = round(ask*amount,2)
         return f"{amount} {currency} = {cost} PLN"
-    return render_template("form_rates.html", codes = codes)
+    return render_template("form_rates.html", codes = codes, today=today)
 
