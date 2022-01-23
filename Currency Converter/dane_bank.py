@@ -25,18 +25,28 @@ def rates_to_csv():
 
 rates_to_csv()
 @app.route('/exchange', methods=["GET", "POST"])
-def exchage():
+def exchange():
     today = datetime.date.today()
     codes = get_codes()
     if request.method == "POST":
-        data = request.form
-        currency = data.get('code')
-        amount = int(data.get('amount'))
-        for data in rates:
-            if data.get('code') == currency:
-                ask = data.get('ask')
-                break
-        cost = round(ask*amount,2)
-        return f"{amount} {currency} = {cost} PLN"
+        if "formsubmit" in request.form:
+            data = request.form 
+            currency = data.get('code')
+            amount = int(data.get('amount'))
+            for rate in rates:
+                if rate.get('code') == currency:
+                    ask = rate.get('ask')
+                    break
+            cost = round(ask*amount,2)
+            return f"{amount} {currency} = {cost} PLN"
+        elif "formsubmit2" in request.form:
+             data = request.form 
+             currency = data.get('code')
+             amountbid = int(data.get('amount'))
+             for rate in rates:
+                 if rate.get('code') == currency:
+                     bid = rate.get('bid')
+                     break
+             cost = round(bid*amountbid,2)
+             return f"{amountbid} {currency} = {cost} PLN"
     return render_template("form_rates.html", codes = codes, today=today)
-
