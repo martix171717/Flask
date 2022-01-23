@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <title> Currency exchange rates </title>
+    </head>
+    <body>
+         <form method="post">
+             <p>{{amount}} {{currency}} = {{cost}} PLN</p>
+             <button href="{{ url_for('exchange')}}">Return to the currency converter</button>
+         </form>
+    </body>
+</html>

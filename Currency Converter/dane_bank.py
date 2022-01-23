@@ -38,7 +38,7 @@ def exchange():
                     ask = rate.get('ask')
                     break
             cost = round(ask*amount,2)
-            return f"{amount} {currency} = {cost} PLN"
+            return render_template("rates_result.html", amount=amount, currency=currency, cost=cost)
         elif "formsubmit2" in request.form:
              data = request.form 
              currency = data.get('code')
@@ -48,5 +48,5 @@ def exchange():
                      bid = rate.get('bid')
                      break
              cost = round(bid*amountbid,2)
-             return f"{amountbid} {currency} = {cost} PLN"
+             return render_template("rates_result.html", amount=amountbid, currency=currency, cost=cost)
     return render_template("form_rates.html", codes = codes, today=today)
